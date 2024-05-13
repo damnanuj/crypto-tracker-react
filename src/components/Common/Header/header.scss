@@ -1,0 +1,59 @@
+
+@import "../../../colors.scss";
+.navbar{
+// background-color: red;
+display: flex;
+justify-content: space-between;
+padding: 1.5rem 2.8rem;
+align-items: center;
+position: sticky;
+top: 0;
+left: 0;
+.logo{
+    font-size: 1.5rem; 
+}
+}
+.navLinks{
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    transition: 0.3s ease-in-out;  
+}
+.navLink{
+    color: $dark-light-text-color;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;     
+}
+.navLink:hover{
+    color: $dark-text-color;
+}
+.dashBtn{
+    background-color: $dark-accent-text-color;
+    color: $dark-button-text-color;
+    border-radius: 20px;
+    padding: 10px 23px;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+.dashBtn:hover{
+  box-shadow: 1px 1px  10px $dark-primary-color;
+}
+.mobileMenu{
+    display: none;
+}
+
+@media (max-width :800px){
+    .navLinks{
+        display: none;
+    }
+    .navbar{
+        padding: 1.5rem;
+    }
+    .logo{
+        font-size: 1.2rem !important;
+    }
+    .mobileMenu{
+        display: block;
+    }
+}

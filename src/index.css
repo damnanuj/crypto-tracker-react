@@ -1,13 +1,80 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Light Theme Colors */
+:root {
+  --light-primary-color: #4a90e2; /* Main brand color */
+  --light-secondary-color: #6c757d; /* Secondary color for accents */
+  --light-background-color: #f8f9fa; /* Background color for main content */
+  --light-card-background-color: #ffffff; /* Background color for cards and containers */
+  --light-text-color: #333333; /* Main text color */
+  --light-light-text-color: #808080; /* Lighter text color for secondary information */
+  --light-accent-text-color: #007bff; /* Accent text color for important information */
+  --light-button-background-color: var(--light-primary-color); /* Background color for buttons */
+  --light-button-text-color: #ffffff; /* Text color for buttons */
+  --light-border-color: #dddddd; /* Border color for elements */
+  --light-success-color: #28a745; /* Color for success messages */
+  --light-warning-color: #ffc107; /* Color for warning messages */
+  --light-error-color: #dc3545; /* Color for error messages */
 }
+
+/* Dark Theme Colors */
+:root {
+  --dark-primary-color: #4a90e2; /* Main brand color */
+  --dark-secondary-color: #6c757d; /* Secondary color for accents */
+  --dark-background-color: #232323; /* Background color for main content */
+  --dark-card-background-color: #444444; /* Background color for cards and containers */
+  --dark-text-color: #ffffff; /* Main text color */
+  --dark-light-text-color: #cccccc; /* Lighter text color for secondary information */
+  --dark-accent-text-color: #007bff; /* Accent text color for important information */
+  --dark-button-background-color: var(--dark-primary-color); /* Background color for buttons */
+  --dark-button-text-color: #ffffff; /* Text color for buttons */
+  --dark-border-color: #555555; /* Border color for elements */
+  --dark-success-color: #28a745; /* Color for success messages */
+  --dark-warning-color: #ffc107; /* Color for warning messages */
+  --dark-error-color: #dc3545; /* Color for error messages */
+}
+
+
+body {
+  -webkit-font-smoothing: antialiased;
+  color:var(--dark-text-color) ;
+  background-color: var(--dark-background-color) ;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Inter", sans-serif;
+  height: 400vh;
+}
+
+
+::selection{
+  background-color: var(--dark-primary-color);
+  color: var(--dark-text-color);
+}
+
+
+::-webkit-scrollbar-track
+{
+ -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+ border-radius: 10px;
+ background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+ width: 12px;
+ background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+ border-radius: 10px;
+ -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+ background-color:var(--dark-primary-color);
+}
+
+ 
