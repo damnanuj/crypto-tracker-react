@@ -8,12 +8,11 @@ import "./header.scss";
 export default function AnchorTemporaryDrawer() {
   const [open, setOpen] = useState(false);
 
-
-  
   return (
     <div style={{color:'white'}}>
-      
-          <Button onClick={()=>setOpen(true)}><MenuRoundedIcon/></Button>
+          <Button onClick={()=>setOpen(true)}>
+              <MenuRoundedIcon/>
+          </Button>
           <Drawer
             anchor={'right'}
             open={open}
