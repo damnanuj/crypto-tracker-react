@@ -1,0 +1,63 @@
+@import "../../../colors.scss";
+.mainContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3rem;
+    border: 1px solid red;
+    min-height: 90vh;
+}
+.leftPart{
+    border: 1px solid green;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.trackHeading,.realTimeHeading{
+    font-size: 7rem;
+    font-weight: 800;
+}
+.trackHeading:hover{
+    -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: $dark-text-color;
+  color: transparent;
+  transition: all 0.3s ease-in-out;
+  cursor: grabbing;
+}
+
+.realTimeHeading{
+    color:$dark-accent-text-color;
+}
+.info{
+    font-size: 20px;
+    color: $dark-light-text-color;
+}
+
+.landingPageBtns{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 1rem;
+    gap: 2rem;
+}
+
+.rightPart{
+    position: relative;
+    width: 40%;
+    height: 100%;
+    border: 1px solid red;
+  
+}
+.phone{
+    position: absolute;
+    width: 50%;
+    z-index: 100;
+    min-width: 350px;
+    right: 0;
+}
+.gradient{
+    position: absolute;
+    min-width: 300px;
+    width: 40%;
+    top: 2rem;
+    right: 0;
+}

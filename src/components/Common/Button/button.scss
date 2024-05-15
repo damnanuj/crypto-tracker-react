@@ -1,0 +1,25 @@
+@import "../../../colors.scss";
+
+
+.dashBtn,.outlinedBtn {
+  border: 1px solid $dark-accent-text-color;
+  color: $dark-button-text-color;
+  border-radius: 20px;
+  padding: 10px 25px;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  min-width: 110px;
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+.dashBtn {
+  background-color: $dark-accent-text-color;
+}
+.dashBtn:hover {
+  box-shadow: 1px 1px 10px $dark-primary-color;
+}
+
+.outlinedBtn:hover {
+  background-color: $dark-accent-text-color;
+}
