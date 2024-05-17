@@ -2,13 +2,14 @@
 .mainContainer{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    // align-items: center;
     padding: 0 3rem;
-    border: 1px solid red;
-    min-height: 90vh;
+    // border: 1px solid red;
+    height: 70vh;
+    margin-top: 2rem;
 }
 .leftPart{
-    border: 1px solid green;
+    // border: 1px solid green;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -41,23 +42,89 @@
 }
 
 .rightPart{
+    margin-right: 1rem;
     position: relative;
     width: 40%;
-    height: 100%;
-    border: 1px solid red;
+    height: 85%;
+    // border: 1px solid yellow;
+    
   
 }
 .phone{
     position: absolute;
-    width: 50%;
+   width: 60%;
     z-index: 100;
-    min-width: 350px;
-    right: 0;
+min-width: 280px;
+right: 0;
 }
 .gradient{
     position: absolute;
-    min-width: 300px;
-    width: 40%;
+    width: 55%;
+    min-width: 250px;
     top: 2rem;
     right: 0;
+}
+
+
+
+
+@media (max-width :1250px){
+    .mainContainer{
+        height: 60vh;
+    }
+    .trackHeading,.realTimeHeading{
+        font-size: 5rem;
+        font-weight: 800;
+    }
+}
+@media (max-width :950px){
+    .mainContainer{
+        height: 50vh;
+    }
+   .phone{
+    min-width: 250px;
+   }
+   .gradient{
+    min-width: 230px;
+   }
+   .trackHeading, .realTimeHeading{
+    font-size: 4rem;
+ 
+   }
+   .info{
+    font-size: 18px;
+
+   }
+
+    
+}
+@media (max-width :800px){
+    .mainContainer{
+        margin-top: 1.5rem;
+        flex-direction: column;
+        height: 100vh;
+        gap: 3rem;
+        padding: 0 2rem;
+        justify-content: center;
+    }
+    .leftPart{
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .trackHeading, .realTimeHeading{
+        font-size: 3.1rem;
+        text-align: center;
+       }
+       .info{
+        font-size: 16px;
+        text-align: center;
+       }
+       .rightPart{
+        width: 85%;
+       }
+       .landingPageBtns{
+        gap: 1rem;
+       }
+    
 }

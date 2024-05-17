@@ -1,6 +1,6 @@
 import React from 'react'
 import "./button.scss"
-const Button = ({text, onClick, outline}) => {
+const ButtonComponent = ({text, onClick, outline}) => {
   return (
     <div className={outline ? "outlinedBtn": "dashBtn"} onClick={onClick}>
       {text}
@@ -8,4 +8,4 @@ const Button = ({text, onClick, outline}) => {
   )
 }
 
-export default Button
+export default ButtonComponent

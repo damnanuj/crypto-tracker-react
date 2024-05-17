@@ -1,5 +1,8 @@
 
 @import "../../../colors.scss";
+a{
+    text-decoration: none;
+}
 .navbar{
 background-color: $dark-background-color;
 display: flex;
@@ -9,17 +12,20 @@ align-items: center;
 position: sticky;
 top: 0;
 left: 0;
+z-index: 101;
 .logo{
     font-size: 1.5rem; 
+    text-decoration: none;
+    color: $dark-text-color;
 }
 }
 .navLinks{
     display: flex;
     gap: 1.5rem;
     align-items: center;
-    transition: 0.3s ease-in-out;  
 }
 .navLink{
+    transition: 0.3s ease-in-out;  
     color: $dark-light-text-color;
     text-decoration: none;
     font-weight: 600;
