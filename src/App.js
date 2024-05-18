@@ -11,6 +11,7 @@ function App() {
           <Routes>
             <Route path='/' element ={<HomePage/>}/>
             <Route path='/dashboard' element={<Dashboard/>}/>
+            <Route path='*' element={<p>Wrong Route</p>}/>
           </Routes>
       </BrowserRouter>
     </div>

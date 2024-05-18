@@ -6,9 +6,12 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import { ThemeProvider, createTheme } from "@mui/material";
+import GridComponent from "./Grid";
+import { dummyData } from "../../pages/dummyData";
+
+
 const TabsComponent = () => {
     const [value, setValue] = useState('grid');
-
     const handleChange = (event, newValue) => {
       setValue(newValue);
     };
@@ -38,9 +41,27 @@ const TabsComponent = () => {
              
             </TabList>
           </div>
-          <TabPanel  value="grid">Grid</TabPanel>
-          <TabPanel value="list">List</TabPanel>
-         
+          <TabPanel value="grid" >
+            <div className="grid-container">
+            {
+              dummyData.map((coin,i)=>{
+                return (
+                 <GridComponent key={i} coin={coin}/>
+                )
+              })
+            }
+            </div>
+            
+          </TabPanel>
+          <TabPanel value="list">
+            {/* {
+                coins.map(item=>{
+                  return (
+                     <p key={item.id}>{item.name}</p>
+                  )
+                })
+              } */}
+          </TabPanel>
         </TabContext>
       </ThemeProvider>
     );

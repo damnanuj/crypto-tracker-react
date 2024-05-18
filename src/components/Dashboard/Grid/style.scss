@@ -1,0 +1,105 @@
+@import "../../../colors.scss";
+
+
+
+.grid-card{
+    // border: 1px solid red;
+    width: 100%;
+    height: 250px;
+    border: 1px solid transparent;
+    border-radius: .75rem;
+    padding: 1.2rem;
+    background-color: $dark-card-background-color;
+    justify-content: center;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        transition: all 0.2s ease-in;
+        cursor: pointer;
+    
+    .name-logo{
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        .coinImg{
+            width: 2.8rem;
+            height: 2.8rem;
+            border-radius: 30px;
+        }
+        .symbol-name{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            .name{
+                color: $dark-text-color;
+                text-transform: uppercase;
+                font-weight: 500;
+                font-size: 18px;
+            }
+            .symbol{
+                font-weight: 550;
+                color: $dark-light-text-color;
+            }
+        }
+       
+    }
+    .percentContainer{
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        .priceUp{
+            color: $dark-success-color;
+            border: 1px solid currentColor;
+            border-radius: 30px;
+            padding: 7px;
+        }
+        .priceDown{
+            color: $dark-error-color;
+            border: 1px solid currentColor;
+            border-radius: 30px;
+            padding: 7px;
+        }
+        .priceDown:hover, .priceUp:hover{
+            background-color: currentColor;
+            
+        }
+        .percentageChange{
+            border: 1px solid $dark-success-color;
+            padding: 7px 10px;
+            border-radius: 20px;
+            width: max-content;
+            transition: 0.3s ease-in;
+            &.red{
+                border: 1px solid $dark-error-color;
+            }
+            &.red:hover{
+                background-color: $dark-error-color;
+            }
+        }
+        .percentageChange:hover{
+            background-color: $dark-success-color;
+        }
+    }
+
+    
+   .currentPrice{
+    font-size: 21px;
+    color: $dark-success-color;
+    &.red{
+        color: $dark-error-color;
+    }
+   }
+   .totalVolume{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+   }
+   
+}
+.grid-card:hover{
+ transform: scale(1.02);
+ border: 1px solid $dark-success-color;
+  &.red:hover{
+    border: 1px solid $dark-error-color;
+  }
+}
