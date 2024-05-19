@@ -1,12 +1,12 @@
 import axios from 'axios';
-
-export const fetchCoinsData = async () => {
+// "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false"
+export const fetch50CoinsData = async () => {
   const options = {
     method: "GET",
     url: "https://api.coingecko.com/api/v3/coins/markets",
     params: {
       vs_currency: "usd",
-      order: "id_asc",
+      order: "market_cap_desc",
       per_page: "50",
       page: "1",
     },

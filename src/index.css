@@ -47,7 +47,7 @@ body {
   background-color: var(--dark-background-color) ;
   -moz-osx-font-smoothing: grayscale;
   font-family: "Inter", sans-serif;
-  height: 120vh;
+  height: 100vh;
 }
 
 

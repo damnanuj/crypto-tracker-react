@@ -56,6 +56,17 @@ z-index: 101;
     }
 }
 
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .navbar{
+        padding: 2rem 6rem;
+    }
+    
+}
+
+
+
+
 @media (max-width :800px){
     .navLinks{
         display: none;
