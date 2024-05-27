@@ -12,7 +12,7 @@ import ListComponent from "./List/ListComponent";
 
 
 const TabsComponent = ({coins}) => {
-    const [value, setValue] = useState('grid');
+    const [value, setValue] = useState('list');
     const handleChange = (event, newValue) => {
       setValue(newValue);
     };
@@ -21,7 +21,12 @@ const TabsComponent = ({coins}) => {
       color:  "var(--dark-light-text-color)",
       fontWeight : 600,
       fontSize : "1rem",
-      fontFamily : "Inter"
+      fontFamily : "Inter",
+      
+    }
+
+    const listStyle={
+      padding:"10px"
     }
 
     const theme = createTheme({
@@ -54,7 +59,7 @@ const TabsComponent = ({coins}) => {
             </div>
             
           </TabPanel>
-          <TabPanel value="list">
+          <TabPanel value="list" sx={listStyle}>
             <table className="listTable">
                 {
                 
@@ -64,7 +69,7 @@ const TabsComponent = ({coins}) => {
                   )
                 })
                 }
-              </table>
+            </table>
           </TabPanel>
         </TabContext>
       </ThemeProvider>

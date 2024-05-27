@@ -29,12 +29,23 @@
 }
 
 .name-logo{
+    position: relative;
     display: flex;
     gap: 1rem;
+    // border: 1px solid red;
+    .favorite{
+        position: absolute;
+        right: 0px;
+        color: $dark-light-text-color;
+    }
+    .favorite:hover{
+       transform: scale(1.1);
+       
+    }
     
     .coinImg{
-        width: 3.2rem;
-        height: 3.2rem;
+        width: 3.1rem;
+        height: 3.1rem;
         border-radius: 30px;
     }
     .symbol-name{

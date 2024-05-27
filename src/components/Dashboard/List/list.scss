@@ -7,20 +7,34 @@ tr {
   align-items: center;
   padding: 12px 3rem;
   gap: 1rem;
+  border: 1px solid red;
 }
 
 td {
+  border: 1px solid blue;
   width: 20%;
   display: flex;
   justify-content: flex-start;
 
   &:nth-child(4),
   &:nth-child(5) {
-    justify-content: center;
+   
+    width: 15%;
   }
   &:nth-child(3) {
-    width: 10%;
+    width: 15%;
   }
+  &:nth-child(2) {
+ justify-content: space-between !important;
+  }
+  &:nth-child(6) {
+    width: 3%;
+    justify-content: center;
+  }
+  // &:nth-child(1) {
+  //   width: 20%;
+   
+  // }
 }
 .vol,
 .cap {
@@ -34,4 +48,70 @@ tr:hover {
   transition: all 0.3s ease-in;
   cursor: pointer;
   background-color: $dark-card-background-color;
+}
+
+
+
+
+
+@media (max-width :1250px){
+  tr{
+    border:1px solid  red;
+    padding: 10px 2rem;
+  }
+  
+  .row-icon{
+    display: none !important;
+  }
+
+  
+
+}
+
+
+@media (max-width :950px){
+  tr{
+    border: 1px solid yellow;
+  }
+  .row-market-cap{
+    display: none;
+  }
+  td{
+    width: 25%;
+  }
+}
+
+@media(max-width: 800px) {
+  tr{
+    border:1px solid  red;
+    padding: 10px 1rem;
+  }
+}
+/* Extra small devices (phones, 600px and down) */
+@media (max-width: 600px) {
+  .row-total-vol{
+    display: none;
+  }
+  tr{
+    padding: 10px 1rem;
+  }
+  td{
+    width: 27%;
+    &:nth-child(6) {
+      width: 7%;
+      
+    }
+  }
+  .listImg{
+    width: 2.5rem  !important;
+    height: 2.5rem !important;
+  }
+  .listName{
+    font-size: 15px !important;
+  }
+  .listPrice{
+    font-size: 16px !important;
+  }
+
+
 }

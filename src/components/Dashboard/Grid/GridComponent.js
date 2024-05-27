@@ -1,5 +1,7 @@
 import React from "react";
 import "./grid.scss";
+import { Tooltip } from "@mui/material";
+import { formatNumber } from "../../../functions/numberFormatter";
 
 const GridComponent = ({ coin }) => {
   const cardStyle = `${
@@ -12,6 +14,7 @@ const GridComponent = ({ coin }) => {
     coin.price_change_percentage_24h >= 0 ? "green" : "red"
   }`;
   const price = `${coin.price_change_percentage_24h}`;
+  const favorite = `${coin.price_change_percentage_24h >= 0 ? "green" : "red"}`;
 
   return (
     <div className={`grid-card ${cardStyle}`}>
@@ -21,6 +24,9 @@ const GridComponent = ({ coin }) => {
           <h3 className="name">{coin.name}</h3>
           <p className="symbol">{coin.symbol}</p>
         </div>
+        <Tooltip title="Add to watchlist">
+        <span className={`material-icons favorite ${favorite}`}>favorite</span>
+        </Tooltip>
       </div>
       <div className="percentContainer">
         <p className={percentageStyle}>{coin.price_change_percentage_24h}%</p>
@@ -34,10 +40,10 @@ const GridComponent = ({ coin }) => {
       <h2 className={priceStyle}>${coin.current_price}</h2>
       <div className="totalVolume">
         <h5>
-          Total Volume: <span>${coin.total_volume}</span>{" "}
+          Total Volume: <span>${formatNumber(coin.total_volume)}</span>{" "}
         </h5>
         <h5>
-          Market Cap: <span>${coin.market_cap}</span>
+          Market Cap: <span>${formatNumber(coin.market_cap)}</span>
         </h5>
       </div>
     </div>
