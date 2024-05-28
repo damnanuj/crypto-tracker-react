@@ -7,7 +7,7 @@ const ListComponent = ({ coin }) => {
   const cardStyle = `${
     coin.price_change_percentage_24h >= 0 ? "green" : "red"
   }`;
-  const percentageStyle = `percentageChange ${
+  const percentageStyle = `percentageChange listPercentageChange ${
     coin.price_change_percentage_24h >= 0 ? "green" : "red"
   }`;
   const priceStyle = `currentPrice listPrice ${
@@ -21,11 +21,11 @@ const ListComponent = ({ coin }) => {
       {/* Logo and name */}
       <Tooltip title="coin logo & name" >
         <td>
-          <div className="name-logo">
+          <div className="name-logo list-name-logo">
             <img src={coin.image} className="coinImg listImg" alt="logo" />
             <div className="symbol-name">
               <h3 className="name listName">{coin.name}</h3>
-              <p className="symbol">{coin.symbol}</p>
+              <p className="symbol listSymbol">{coin.symbol}</p>
             </div>
           </div>
           

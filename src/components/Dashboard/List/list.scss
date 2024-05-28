@@ -7,11 +7,13 @@ tr {
   align-items: center;
   padding: 12px 3rem;
   gap: 1rem;
-  border: 1px solid red;
+  // border: 1px solid red;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.323);
+  // border-top: 1px solid rgba(128, 128, 128, 0.323);
 }
 
 td {
-  border: 1px solid blue;
+  // border: 1px solid blue;
   width: 20%;
   display: flex;
   justify-content: flex-start;
@@ -49,14 +51,17 @@ tr:hover {
   cursor: pointer;
   background-color: $dark-card-background-color;
 }
-
+.favorite:hover{
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+}
 
 
 
 
 @media (max-width :1250px){
   tr{
-    border:1px solid  red;
+    // border:1px solid  red;
     padding: 10px 2rem;
   }
   
@@ -70,9 +75,7 @@ tr:hover {
 
 
 @media (max-width :950px){
-  tr{
-    border: 1px solid yellow;
-  }
+ 
   .row-market-cap{
     display: none;
   }
@@ -83,7 +86,7 @@ tr:hover {
 
 @media(max-width: 800px) {
   tr{
-    border:1px solid  red;
+    // border:1px solid  red;
     padding: 10px 1rem;
   }
 }
@@ -93,12 +96,18 @@ tr:hover {
     display: none;
   }
   tr{
-    padding: 10px 1rem;
+    padding: 15px 0.8rem;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.323);
+    border-top: 1px solid rgba(128, 128, 128, 0.323);
   }
   td{
     width: 27%;
     &:nth-child(6) {
       width: 7%;
+      
+    }
+    &:nth-child(2) {
+     justify-content: center !important;
       
     }
   }
@@ -107,10 +116,21 @@ tr:hover {
     height: 2.5rem !important;
   }
   .listName{
-    font-size: 15px !important;
+    font-size: 12px !important;  
+  }
+  .listSymbol{
+    font-size: 12px !important;
   }
   .listPrice{
     font-size: 16px !important;
+  }
+  .list-name-logo{
+    gap: 0.5rem ;
+  }
+  .listPercentageChange{
+    padding: 5px 5px !important;
+    font-size: 12px ;
+    min-width: 80px !important;
   }
 
 

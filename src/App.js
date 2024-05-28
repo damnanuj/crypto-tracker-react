@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import HomePage from './pages/Home';
 import Dashboard from './pages/Dashboard';
+import WrongRoute from './pages/WrongRoute';
 
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
           <Routes>
             <Route path='/' element ={<HomePage/>}/>
             <Route path='/dashboard' element={<Dashboard/>}/>
-            <Route path='*' element={<p>Wrong Route</p>}/>
+            <Route path='*' element={<WrongRoute/>}/>
           </Routes>
       </BrowserRouter>
     </div>
