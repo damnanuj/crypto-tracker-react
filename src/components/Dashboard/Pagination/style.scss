@@ -1,0 +1,26 @@
+@import "../../../colors.scss";
+
+.pages-counts {
+  margin-top: 10px;
+  padding: 10px 0 20px 0 ;
+//   border: 1px solid red;
+  display: flex;
+  justify-content: center;
+}
+
+.css-bf9wz-MuiButtonBase-root-MuiPaginationItem-root {
+  color: white !important;
+}
+
+.css-bf9wz-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+  color: #fff;
+  background-color: $dark-accent-text-color;
+}
+.css-1scal0h-MuiPaginationItem-root {
+  color: white !important;
+}
+
+
+.css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root {
+    
+    color: white !important;}

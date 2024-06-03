@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "../components/Common/Header/Header";
 import TabsComponent from "../components/Dashboard/Tabs";
-import { fetch50CoinsData } from "../functions/fetch50CoinsData";
+import { fetch100CoinsData } from "../functions/fetch100CoinsData";
 import { CircularProgress } from "@mui/material";
 import SearchBar from "../components/Dashboard/Searchbar/SearchBar";
 
@@ -12,20 +12,38 @@ const Dashboard = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [search, setSearch] = useState("");
+  const [page, setPage] = useState(1);
+  const [filteredCoins, setFilteredCoins] = useState([]);
+  useEffect(() => {
+    if (search) {
+      setFilteredCoins(
+        coins.filter(
+          (coin) =>
+            coin.name.toLowerCase().includes(search.toLowerCase()) ||
+            coin.symbol.toLowerCase().includes(search.toLowerCase())
+        )
+      );
+    } else {
+      setFilteredCoins(coins.slice((page - 1) * 10, (page - 1) * 10 + 10));
+    }
+  }, [search,page,coins]);
 
   const onSearchChange = (e) => {
     setSearch(e.target.value);
   };
-  var filteredCoins = coins.filter(
-    (item) =>
-      item.name.toLowerCase().includes(search.toLowerCase()) ||
-      item.symbol.toLowerCase().includes(search.toLowerCase())
-  );
+
+  const handlePageChange = (e, value) => {
+    setPage(value);
+    console.log("valueee", value);
+    setFilteredCoins(coins.slice((value - 1) * 10, (value - 1) * 10 + 10));
+    console.log("filteredCoins", filteredCoins);
+    
+  };
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const marketData = await fetch50CoinsData();
+        const marketData = await fetch100CoinsData();
         console.log(marketData);
         setCoins(marketData);
         setTimeout(() => setLoading(false), 50);
@@ -75,7 +93,12 @@ const Dashboard = () => {
       <Header />
       <SearchBar search={search} onSearchChange={onSearchChange} />
       <TabsComponent coins={filteredCoins} />
-      <BasicPagination/>
+      {!search && (
+            <BasicPagination
+              page={page}
+              handlePageChange={handlePageChange}
+            />
+          )}
     </div>
   );
 };
