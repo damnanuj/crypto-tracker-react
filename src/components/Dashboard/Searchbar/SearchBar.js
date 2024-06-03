@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./style.scss"
 
-const SearchBar = () => {
+const SearchBar = ({search, onSearchChange}) => {
+ 
   return (
-    <div>
-      
+    <div className='srchBar-container'>
+      <span className='material-icons srch-icon'>search</span>
+      <input
+          placeholder='Search a coin name'
+          type='text'
+          value={search}
+          onChange={(e)=>onSearchChange(e)}
+       />
     </div>
   )
 }
