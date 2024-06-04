@@ -40,7 +40,9 @@
   --dark-error-color: #dc3545; /* Color for error messages */
 }
 
-
+html{
+  scroll-behavior: smooth;
+}
 body {
   -webkit-font-smoothing: antialiased;
   color:var(--dark-text-color) ;

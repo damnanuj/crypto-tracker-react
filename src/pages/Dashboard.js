@@ -2,10 +2,14 @@ import React, { useEffect, useState } from "react";
 import Header from "../components/Common/Header/Header";
 import TabsComponent from "../components/Dashboard/Tabs";
 import { fetch100CoinsData } from "../functions/fetch100CoinsData";
-import { CircularProgress } from "@mui/material";
+
 import SearchBar from "../components/Dashboard/Searchbar/SearchBar";
 
 import BasicPagination from "../components/Dashboard/Pagination/Pagination";
+import Loader from "../components/Common/Loader/Loader";
+
+import WrongRoute from "./WrongRoute";
+import BackToTop from "../components/Common/BackToTop/BackToTop";
 
 const Dashboard = () => {
   const [coins, setCoins] = useState([]);
@@ -24,7 +28,7 @@ const Dashboard = () => {
         )
       );
     } else {
-      setFilteredCoins(coins.slice((page - 1) * 10, (page - 1) * 10 + 10));
+      setFilteredCoins(coins.slice((page - 1) * 20, (page - 1) * 20 + 20));
     }
   }, [search,page,coins]);
 
@@ -35,7 +39,7 @@ const Dashboard = () => {
   const handlePageChange = (e, value) => {
     setPage(value);
     console.log("valueee", value);
-    setFilteredCoins(coins.slice((value - 1) * 10, (value - 1) * 10 + 10));
+    setFilteredCoins(coins.slice((value - 1) * 20, (value - 1) * 20 + 20));
     console.log("filteredCoins", filteredCoins);
     
   };
@@ -58,17 +62,7 @@ const Dashboard = () => {
 
   if (loading) {
     return (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "100vh",
-          width: "100%",
-        }}
-      >
-        <CircularProgress />
-      </div>
+     <Loader/>
     );
   }
 
@@ -83,7 +77,8 @@ const Dashboard = () => {
           width: "100%",
         }}
       >
-        Error: {error.message}
+        {/* Error: {error.message} */}
+        <WrongRoute errCode={error.message}/>
       </div>
     );
   }
@@ -91,6 +86,7 @@ const Dashboard = () => {
   return (
     <div className="dashboardContainer">
       <Header />
+      <BackToTop/>
       <SearchBar search={search} onSearchChange={onSearchChange} />
       <TabsComponent coins={filteredCoins} />
       {!search && (

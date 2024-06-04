@@ -11,6 +11,10 @@
     .oop{
         font-size: 20px;
     }
+    .errCode{
+        color: $dark-error-color;
+        margin-top: 10px;
+    }
     div{
         display: flex;
         gap: 1rem;

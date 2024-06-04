@@ -1,0 +1,15 @@
+@import "../../../colors.scss";
+#myBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    color: $dark-accent-text-color;
+    
+    cursor: pointer;
+    span{
+        font-size: 3rem;
+    }
+}
