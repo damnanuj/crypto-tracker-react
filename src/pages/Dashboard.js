@@ -60,11 +60,11 @@ const Dashboard = () => {
     fetchData();
   }, []);
 
-  if (loading) {
-    return (
-     <Loader/>
-    );
-  }
+  // if (loading) {
+  //   return (
+  //    <Loader/>
+  //   );
+  // }
 
   if (error) {
     return (
@@ -88,13 +88,15 @@ const Dashboard = () => {
       <Header />
       <BackToTop/>
       <SearchBar search={search} onSearchChange={onSearchChange} />
-      <TabsComponent coins={filteredCoins} />
-      {!search && (
+      {
+        loading ? <Loader/> : <TabsComponent coins={filteredCoins} />
+      }
+      {!loading ? (
             <BasicPagination
               page={page}
               handlePageChange={handlePageChange}
             />
-          )}
+          ) : null}
     </div>
   );
 };
