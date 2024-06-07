@@ -31,7 +31,7 @@ const CoinPage = () => {
   return (
     <div>
       <Header />
-      {loading ? <Loader /> : <p>{id}</p>}
+      {loading ? <Loader /> : <p> coin id: {id}</p>}
     </div>
   );
 };
