@@ -1,0 +1,15 @@
+.coinInfo{
+    padding: 1rem 2rem;
+    h2{
+        margin-bottom: 0.5rem;
+    }
+    p{
+        a{
+            color: white;
+            text-decoration: underline;
+        }
+        a:hover{
+            color: blue;
+        }
+    }
+}
