@@ -48,7 +48,7 @@ const Main = () => {
               }}
             />
               
-            <img src={gradient} className='gradient'/>
+            <img src={gradient} className='gradient' alt='gradient'/>
         </div>
     </div>
   )
