@@ -11,6 +11,7 @@ const CoinPage = () => {
   const { id } = useParams();
   const [loading, setLoading] = useState(true);
   const [coinData, setCoinData] = useState();
+  const [days, setDays] = useState(30);
 
   useEffect(() => {
     if (id) {
@@ -28,10 +29,23 @@ const CoinPage = () => {
         .then(function (response) {
           console.log(response.data);
           CoinObject(setCoinData, response.data);
-          setLoading(false);
+          // setLoading(false);
         })
         .catch(function (error) {
           console.error(error);
+          // setLoading(false);
+        });
+
+      axios
+        .get(
+          `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${days}&interval=daily`
+        )
+        .then((response) => {
+          console.log("Prices ==>>",response.data.prices);
+          setLoading(false);
+        })
+        .catch((error) => {
+          console.log(error);
           setLoading(false);
         });
     }
@@ -44,11 +58,11 @@ const CoinPage = () => {
         <Loader />
       ) : (
         <>
-        <div className="grayWrapper">
-          {" "}
-          <ListComponent coin={coinData} />{" "}
-        </div>
-        <CoinInfo heading={coinData.name} desc={coinData.desc}/>
+          <div className="grayWrapper">
+            {" "}
+            <ListComponent coin={coinData} />{" "}
+          </div>
+          <CoinInfo heading={coinData.name} desc={coinData.desc} />
         </>
       )}
     </div>
