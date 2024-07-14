@@ -1,0 +1,11 @@
+.hi{
+    background-color: red !important;
+}
+
+
+@media(max-width: 800px) {
+.toggle-btn{
+    font-size: 0.6rem !important;
+    padding: 0.4rem !important;
+}
+}

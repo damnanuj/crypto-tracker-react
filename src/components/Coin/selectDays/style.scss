@@ -5,3 +5,9 @@
     gap: 0.5rem;
     margin-bottom: 1rem;
   }
+  @media(max-width: 800px) {
+  .MuiSelect-select{
+    font-size: small !important;
+   
+  }
+}
