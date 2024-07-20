@@ -2,9 +2,8 @@ import React, { useEffect, useState } from "react";
 import { fetch100CoinsData } from "../../../../functions/fetch100CoinsData";
 import { MenuItem, Select } from "@mui/material";
 import "./SelectCoins.scss";
-const SelectCoins = () => {
-  const [crypto1, setCrypto1] = useState("bitcoin");
-  const [crypto2, setCrypto2] = useState("ethereum");
+const SelectCoins = ({crypto1, crypto2, handleCoinChange}) => {
+  
   const [allCoins, setAllCoins] = useState([]);
   const styles = {
     height: "2.5rem",
@@ -21,15 +20,7 @@ const SelectCoins = () => {
       },
     },
   };
-  const handleCoinChange = (event, isCrypto2) => {
-    if (isCrypto2) {
-      setCrypto2(event.target.value);
-      console.log("Crypto 2 id",event.target.value);
-    } else {
-        setCrypto1(event.target.value);
-        console.log("Crypto 1 id",event.target.value);
-    }
-  };
+  
 
   useEffect(() => {
     getCoins();

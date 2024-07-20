@@ -11,6 +11,7 @@ export default function TogglePriceType({priceType, handlePriceTypeChange}) {
       justifyContent: "center",
       alignItems: "center",
       marginBottom: "1.5rem",
+      marginTop: "1rem",
     }}
   >
     <ToggleButtonGroup

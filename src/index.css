@@ -89,3 +89,11 @@ body {
     border: none;
   }
 }
+
+.select_crypto_days{
+  display: flex;
+ 
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+}
