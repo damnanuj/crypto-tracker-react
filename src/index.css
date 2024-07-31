@@ -92,7 +92,8 @@ body {
 
 .select_crypto_days{
   display: flex;
- 
+  margin:0 1rem;
+padding: 1rem 1rem;
   align-items: center;
   justify-content: flex-start;
   gap: 2rem;

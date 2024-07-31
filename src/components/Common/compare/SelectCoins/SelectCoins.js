@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import { fetch100CoinsData } from "../../../../functions/fetch100CoinsData";
 import { MenuItem, Select } from "@mui/material";
 import "./SelectCoins.scss";
-const SelectCoins = ({crypto1, crypto2, handleCoinChange}) => {
-  
+const SelectCoins = ({ crypto1, crypto2, handleCoinChange }) => {
   const [allCoins, setAllCoins] = useState([]);
   const styles = {
     height: "2.5rem",
@@ -20,11 +19,9 @@ const SelectCoins = ({crypto1, crypto2, handleCoinChange}) => {
       },
     },
   };
-  
 
   useEffect(() => {
     getCoins();
-   
   }, []);
   async function getCoins() {
     const my100Coins = await fetch100CoinsData();
@@ -42,8 +39,10 @@ const SelectCoins = ({crypto1, crypto2, handleCoinChange}) => {
           onChange={(event) => handleCoinChange(event, false)}
         >
           {allCoins.map((coin, i) => (
-            <MenuItem key={i} value={coin.id}>{coin.name}</MenuItem>
-          ))}
+              <MenuItem key={i} value={coin.id}>
+                {coin.name}
+              </MenuItem>
+            ))}
         </Select>
       </div>
       <div className="crypto-2">
@@ -54,8 +53,10 @@ const SelectCoins = ({crypto1, crypto2, handleCoinChange}) => {
           label="Crypto 2"
           onChange={(event) => handleCoinChange(event, true)}
         >
-          {allCoins.map((coin, i) => (
-            <MenuItem key={i} value={coin.id}>{coin.name}</MenuItem>
+          {allCoins.filter((item) => item.id !== crypto1).map((coin, i) => (
+            <MenuItem key={i} value={coin.id}>
+              {coin.name}
+            </MenuItem>
           ))}
         </Select>
       </div>

@@ -7,6 +7,8 @@ import { settingChartData } from "../functions/settingChartData";
 import { CoinObject } from "../functions/convertObject";
 import { getCoinPrices } from "../functions/getCoinPrices";
 import Loader from "../components/Common/Loader/Loader";
+import ListComponent from "../components/Dashboard/List/ListComponent";
+import CoinInfo from "../components/Coin/coinInfo/CoinInfo";
 
 const ComparePage = () => {
   const [crypto1, setCrypto1] = useState("bitcoin");
@@ -23,12 +25,14 @@ const ComparePage = () => {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [crypto1, crypto2, days, priceType]);
+
   async function getData() {
     setLoading(true);
 
     const data1 = await getCoinData(crypto1);
     const data2 = await getCoinData(crypto2);
+
     if (data1) {
       CoinObject(setCrypto1Data, data1);
     }
@@ -39,11 +43,17 @@ const ComparePage = () => {
     if (data1 && data2) {
       const prices1 = await getCoinPrices(crypto1, days, priceType);
       const prices2 = await getCoinPrices(crypto2, days, priceType);
-      if (prices1.length > 0 && prices2.length > 0) {
+
+      if (prices1 && prices2 && prices1.length > 0 && prices2.length > 0) {
         // settingChartData({setChartData, prices})
-        console.log("PRice fetched", prices1, prices2);
+        console.log("Prices fetched", prices1, prices2);
+        setLoading(false);
+      } else {
+        console.log("Prices not fetched");
         setLoading(false);
       }
+    } else {
+      setLoading(false);
     }
   }
 
@@ -51,16 +61,9 @@ const ComparePage = () => {
     setLoading(true);
     if (isCrypto2) {
       setCrypto2(event.target.value);
-      const data = await getCoinData(event.target.value);
-      CoinObject(setCrypto2Data, data);
     } else {
       setCrypto1(event.target.value);
-      const data = await getCoinData(event.target.value);
-      CoinObject(setCrypto1Data, data);
     }
-    const prices1 = await getCoinPrices(crypto1, days, "prices");
-    const prices2 = await getCoinPrices(crypto2, days, "prices");
-    
   };
 
   return (
@@ -83,6 +86,14 @@ const ComparePage = () => {
               noPTag={true}
             />
           </div>
+          <div className="grayWrapper">
+            <ListComponent coin={crypto1Data} />
+          </div>
+          <div className="grayWrapper">
+            <ListComponent coin={crypto2Data} />
+          </div>
+          <CoinInfo heading={crypto1Data.name} desc={crypto1Data.desc} />
+          <CoinInfo heading={crypto2Data.name} desc={crypto2Data.desc} />
         </>
       )}
     </div>
