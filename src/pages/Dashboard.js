@@ -18,6 +18,11 @@ const Dashboard = () => {
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
   const [filteredCoins, setFilteredCoins] = useState([]);
+
+  const coinsPerPage = 10; //10 coins per page
+
+
+
   useEffect(() => {
     if (search) {
       setFilteredCoins(
@@ -28,7 +33,7 @@ const Dashboard = () => {
         )
       );
     } else {
-      setFilteredCoins(coins.slice((page - 1) * 20, (page - 1) * 20 + 20));
+      setFilteredCoins(coins.slice((page - 1) * coinsPerPage, (page - 1) * coinsPerPage + coinsPerPage));
     }
   }, [search,page,coins]);
 
@@ -39,7 +44,7 @@ const Dashboard = () => {
   const handlePageChange = (e, value) => {
     setPage(value);
     console.log("valueee", value);
-    setFilteredCoins(coins.slice((value - 1) * 20, (value - 1) * 20 + 20));
+    setFilteredCoins(coins.slice((value - 1) * coinsPerPage, (value - 1) * coinsPerPage + coinsPerPage));
     console.log("filteredCoins", filteredCoins);
     
   };
