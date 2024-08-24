@@ -2,6 +2,7 @@ import React from "react";
 import "./grid.scss";
 import { Tooltip } from "@mui/material";
 import { formatNumber } from "../../../functions/numberFormatter";
+import { Link } from "react-router-dom";
 
 const GridComponent = ({ coin }) => {
   const cardStyle = `${
@@ -17,6 +18,7 @@ const GridComponent = ({ coin }) => {
   const favorite = `${coin.price_change_percentage_24h >= 0 ? "green" : "red"}`;
 
   return (
+    <Link to={`/coin/${coin.id}`}>
     <div className={`grid-card ${cardStyle}`}>
       <div className="name-logo">
         <img src={coin.image} className="coinImg" alt={coin.name} />
@@ -47,6 +49,7 @@ const GridComponent = ({ coin }) => {
         </h5>
       </div>
     </div>
+    </Link>
   );
 };
 

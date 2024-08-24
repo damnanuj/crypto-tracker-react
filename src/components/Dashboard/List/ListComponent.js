@@ -2,6 +2,7 @@ import React from "react";
 import "./list.scss";
 import { Tooltip } from "@mui/material";
 import { formatNumber } from "../../../functions/numberFormatter";
+import { Link } from "react-router-dom";
 
 const ListComponent = ({ coin }) => {
   const cardStyle = `${
@@ -17,6 +18,7 @@ const ListComponent = ({ coin }) => {
   const favorite = `${coin.price_change_percentage_24h >= 0 ? "green" : "red"}`;
 
   return (
+    <Link to={`/coin/${coin.id}`}>
     <tr className={`list-card ${cardStyle}`}>
       {/* Logo and name */}
       <Tooltip title="coin logo & name" >
@@ -68,6 +70,7 @@ const ListComponent = ({ coin }) => {
         <span className={`material-icons favorite ${favorite}`}>favorite</span></td>
         </Tooltip>
     </tr>
+    </Link>
   );
 };
 

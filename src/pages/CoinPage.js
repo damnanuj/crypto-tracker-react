@@ -25,15 +25,23 @@ const CoinPage = () => {
     if (id) {
       getData();
     }
-  }, [id]);
+  }, [id, days, priceType]);
+  
 
   async function getData() {
     const data = await getCoinData(id);
     if (data) {
       CoinObject(setCoinData, data);
-      const prices = await getCoinPrices(id, days, priceType);
-      if (prices.length > 0) {
-        settingChartData({setChartData, prices})
+  
+      const prices1 = await getCoinPrices(id, days, priceType);
+      const prices2 = await getCoinPrices(id, days, priceType); // Modify if needed
+  
+      // Validate the prices here
+      if (prices1 && Array.isArray(prices1) && prices1.length > 0) {
+        settingChartData({ setChartData, prices1, prices2 });
+        setLoading(false);
+      } else {
+        console.log("Invalid prices1 data:", prices1);
         setLoading(false);
       }
     }
