@@ -6,7 +6,7 @@
 //   border: 1px solid red;
   display: flex;
   justify-content: center;
-}
+
 
 .css-bf9wz-MuiButtonBase-root-MuiPaginationItem-root {
   color: white !important;
@@ -23,4 +23,11 @@
 
 .css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root {
     
-    color: white !important;}
+    color: $dark-text-color !important;
+    &.light{
+      color: $light-text-color !important;
+    }
+  
+  }
+
+}

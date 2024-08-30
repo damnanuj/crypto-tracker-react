@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./grid.scss";
 import { Tooltip } from "@mui/material";
 import { formatNumber } from "../../../functions/numberFormatter";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { ThemeContext } from "../../../context/ThemeContext";
 
 const GridComponent = ({ coin }) => {
+
+  const {theme} = useContext(ThemeContext)
+
+
+
   const cardStyle = `${
     coin.price_change_percentage_24h >= 0 ? "green" : "red"
   }`;
@@ -21,7 +27,7 @@ const GridComponent = ({ coin }) => {
   return (
     <Link to={`/coin/${coin.id}`}>
       <motion.div
-        className={`grid-card ${cardStyle}`}
+        className={`grid-card ${theme==='light'?'light':""} ${cardStyle}`}
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
@@ -29,7 +35,7 @@ const GridComponent = ({ coin }) => {
         <div className="name-logo">
           <img src={coin.image} className="coinImg" alt={coin.name} />
           <div className="symbol-name">
-            <h3 className="name">{coin.name}</h3>
+            <h3 className={`name ${theme==='light'?'light':""}`}>{coin.name}</h3>
             <p className="symbol">{coin.symbol}</p>
           </div>
           <Tooltip title="Add to watchlist">
@@ -49,10 +55,10 @@ const GridComponent = ({ coin }) => {
         </div>
         <h2 className={priceStyle}>${coin.current_price}</h2>
         <div className="totalVolume">
-          <h5>
+          <h5 className={`${theme==='light'?'light':""}`}>
             Total Volume: <span>${formatNumber(coin.total_volume)}</span>{" "}
           </h5>
-          <h5>
+          <h5 className={`${theme==='light'?'light':""}`}>
             Market Cap: <span>${formatNumber(coin.market_cap)}</span>
           </h5>
         </div>

@@ -46,11 +46,12 @@ html{
 body {
   -webkit-font-smoothing: antialiased;
   color:var(--dark-text-color) ;
-  background-color: var(--dark-background-color) ;
+ 
   -moz-osx-font-smoothing: grayscale;
   font-family: "Inter", sans-serif;
   height: 100vh;
 }
+
 
 
 ::selection{
@@ -99,3 +100,5 @@ padding: 1rem 1rem;
   justify-content: flex-start;
   gap: 2rem;
 }
+
+

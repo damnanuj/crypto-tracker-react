@@ -20,6 +20,12 @@
   box-shadow: 1px 1px 10px $dark-primary-color;
 }
 
+.outlinedBtn{
+  &.light{
+    color: $light-text-color;
+  }
+}
 .outlinedBtn:hover {
   background-color: $dark-accent-text-color;
+  color: $dark-button-text-color;
 }

@@ -1,16 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import "./main.scss"
 import phone from "../../../assets/phone 1.png"
 import gradient from "../../../assets/gradient 1.png"
 import {motion} from "framer-motion"
 import ButtonComponent from '../../Common/Button/Button'
 import { Link } from 'react-router-dom'
+import { ThemeContext } from '../../../context/ThemeContext'
+
 const Main = () => {
+  const { theme  } = useContext(ThemeContext);
   
   return (
     <div className='mainContainer'>
-        <div className='leftPart'>
-            <motion.h1 className='trackHeading'
+        <div className={`leftPart ${theme ==='light' ? 'light': ""}`}>
+            <motion.h1 className={`trackHeading ${theme ==='light' ? 'light': ""}`}
                 initial={{opacity:0, x:-200}}
                 animate={{opacity:1, x:0}}
                 transition={{duration:0.8}}

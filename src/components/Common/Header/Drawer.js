@@ -6,6 +6,7 @@ import "./header.scss";
 import { IconButton } from '@mui/material';
 import ButtonComponent from '../Button/Button';
 import { Link } from 'react-router-dom';
+import ThemeSwitchBtn from '../ThemeSwitch/ThemeSwitchBtn';
 
 
 export default function AnchorTemporaryDrawer() {
@@ -32,6 +33,7 @@ export default function AnchorTemporaryDrawer() {
                     outline={false}
                   />
                 </Link> 
+                <ThemeSwitchBtn/>
             </div>
          </Drawer>
       

@@ -1,4 +1,10 @@
 @import "../../../colors.scss";
+body{
+    background-color: $dark-background-color;
+    &.light{
+        background-color: $light-background-color;
+    }
+}
 .mainContainer{
     display: flex;
     justify-content: space-between;
@@ -9,14 +15,22 @@
     margin-top: 2rem;
 }
 .leftPart{
-    // border: 1px solid green;
+   
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    
 }
 .trackHeading,.realTimeHeading{
     font-size: 7rem;
     font-weight: 800;
+    
+    
+}
+.trackHeading{
+    &.light{
+        color: $light-text-color ;
+    }
 }
 .trackHeading:hover{
     -webkit-text-stroke-width: 2px;
@@ -24,6 +38,9 @@
   color: transparent;
   transition: all 0.3s ease-in-out;
   cursor: grabbing;
+  &.light{
+    -webkit-text-stroke-color: $light-text-color;
+}
 }
 
 .realTimeHeading{

@@ -16,7 +16,9 @@
     gap: 0.8rem;
     transition: all 0.2s ease-in;
     cursor: pointer;
-    
+    &.light{
+        background-color: $light-card-background-color;
+    }
     
    
 }
@@ -57,11 +59,15 @@
             text-transform: uppercase;
             font-weight: 600;
             font-size: 18px;
+            &.light{
+                color: $light-text-color;
+            }
             
         }
         .symbol{
             font-weight: 550;
             color: $dark-light-text-color;
+            
         }
     }
    
@@ -134,6 +140,9 @@ gap: 5px;
 h5{
    color: $dark-text-color;
     font-weight: 600;
+    &.light{
+        color: $light-text-color;
+    }
     span{
         margin-left: 5px;
         color: $dark-light-text-color

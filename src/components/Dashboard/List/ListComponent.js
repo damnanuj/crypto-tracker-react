@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./list.scss";
 import { Tooltip } from "@mui/material";
 import { formatNumber } from "../../../functions/numberFormatter";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { ThemeContext } from "../../../context/ThemeContext";
 
 const ListComponent = ({ coin }) => {
+
+  const {theme} = useContext(ThemeContext)
+
+
   const cardStyle = `${
     coin.price_change_percentage_24h >= 0 ? "green" : "red"
   }`;
@@ -21,7 +26,7 @@ const ListComponent = ({ coin }) => {
   return (
     <Link to={`/coin/${coin.id}`}>
       <motion.tr
-        className={`list-card ${cardStyle}`}
+        className={`list-card ${cardStyle} ${theme==="light"? 'light':""}`}
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6}}
@@ -32,7 +37,7 @@ const ListComponent = ({ coin }) => {
             <div className="name-logo list-name-logo">
               <img src={coin.image} className="coinImg listImg" alt="logo" />
               <div className="symbol-name">
-                <h3 className="name listName">{coin.name}</h3>
+                <h3 className={`name listName ${theme==="light"? 'light':""}`}>{coin.name}</h3>
                 <p className="symbol listSymbol">{coin.symbol}</p>
               </div>
             </div>
@@ -66,17 +71,17 @@ const ListComponent = ({ coin }) => {
         </Tooltip>
         <Tooltip title="Total volume">
           <td className="row-total-vol">
-            <h5 className="vol ">${formatNumber(coin.total_volume)}</h5>
+            <h5 className={`vol ${theme==="light"? 'light':""}` }>${formatNumber(coin.total_volume)}</h5>
           </td>
         </Tooltip>
         <Tooltip title="Market Cap">
           <td className="row-market-cap">
-            <h5 className="cap">${formatNumber(coin.market_cap)}</h5>
+            <h5 className={`cap ${theme==="light"? 'light':""}` }>${formatNumber(coin.market_cap)}</h5>
           </td>
         </Tooltip>
         <Tooltip title="Add to watchlist">
           <td>
-            <span className={`material-icons favorite ${favorite}`}>
+            <span className={`material-icons listFavorite ${favorite} ${theme==="light"? 'light':""}`}>
               favorite
             </span>
           </td>

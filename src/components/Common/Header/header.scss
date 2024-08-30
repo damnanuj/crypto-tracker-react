@@ -13,10 +13,16 @@ position: sticky;
 top: 0;
 left: 0;
 z-index: 101;
+&.light{
+    background-color: $light-background-color;
+}
 .logo{
     font-size: 1.5rem; 
     text-decoration: none;
     color: $dark-text-color;
+    &.light{
+        color: $light-text-color;
+    }
 }
 }
 .navLinks{
@@ -29,10 +35,16 @@ z-index: 101;
     color: $dark-light-text-color;
     text-decoration: none;
     font-weight: 600;
-    font-size: 1rem;     
+    font-size: 1rem;   
+    &.light{
+        color: $light-light-text-color;
+    }  
 }
 .navLink:hover{
     color: $dark-text-color;
+    &.light{
+        color: $light-text-color;
+    }
 }
 
 .mobileMenu{

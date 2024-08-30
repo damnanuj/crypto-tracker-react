@@ -12,6 +12,9 @@
     width: 80%;
     border-radius: 30px;
     background-color: $dark-card-background-color;
+    &.light{
+        background-color: $light-card-background-color;
+    }
     .srch-icon{
         color: $dark-light-text-color;
         font-size: 1.5rem;

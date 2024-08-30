@@ -11,6 +11,7 @@ tr {
   // border: 1px solid red;
   border-bottom: 1px solid rgba(128, 128, 128, 0.323);
   // border-top: 1px solid rgba(128, 128, 128, 0.323);
+  // background-color: red;
 }
 
 td {
@@ -18,6 +19,7 @@ td {
   width: 20%;
   display: flex;
   justify-content: flex-start;
+
 
   &:nth-child(4),
   &:nth-child(5) {
@@ -45,12 +47,29 @@ td {
   font-weight: 500;
   display: flex;
   align-items: center;
+  &.light{
+    color: $light-light-text-color;
+  }
+}
+.cap {
+  &.light{
+    color: $light-light-text-color;
+  }
+}
+
+.listFavorite{
+  &.light{
+    color: $light-light-text-color;
+  }
 }
 
 tr:hover {
   transition: all 0.3s ease-in;
   cursor: pointer;
   background-color: $dark-card-background-color;
+  &.light{
+    background-color: $light-card-background-color;
+  }
 }
 .favorite:hover{
   transform: scale(1.1);
