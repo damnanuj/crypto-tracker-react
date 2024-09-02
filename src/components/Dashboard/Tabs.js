@@ -52,7 +52,7 @@ const TabsComponent = ({coins}) => {
             {
               coins.map((coin,i)=>{
                 return (
-                 <GridComponent key={i} coin={coin}/>
+                 <GridComponent key={i} index={i} coin={coin}/>
                 )
               })
             }
@@ -65,7 +65,7 @@ const TabsComponent = ({coins}) => {
                 
                 coins.map((coin,i) =>{
                   return (
-                    <ListComponent key={i} coin={coin}/>
+                    <ListComponent key={i} index={i} coin={coin}/>
                   )
                 })
                 }

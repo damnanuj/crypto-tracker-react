@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ThemeContext } from "../../../context/ThemeContext";
 
-const GridComponent = ({ coin }) => {
+const GridComponent = ({ coin, index }) => {
 
   const {theme} = useContext(ThemeContext)
 
@@ -28,9 +28,9 @@ const GridComponent = ({ coin }) => {
     <Link to={`/coin/${coin.id}`}>
       <motion.div
         className={`grid-card ${theme==='light'?'light':""} ${cardStyle}`}
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4 }}
+        initial={{ opacity: 0, y: 100 }}  // Start off-screen
+  whileInView={{ opacity: 1, y: 0 }}  // Animate when in view
+  transition={{ duration: 0.2  }}  // Smooth transition
       >
         <div className="name-logo">
           <img src={coin.image} className="coinImg" alt={coin.name} />

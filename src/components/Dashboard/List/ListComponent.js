@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ThemeContext } from "../../../context/ThemeContext";
 
-const ListComponent = ({ coin }) => {
+const ListComponent = ({ coin,index }) => {
 
   const {theme} = useContext(ThemeContext)
 
@@ -27,9 +27,10 @@ const ListComponent = ({ coin }) => {
     <Link to={`/coin/${coin.id}`} className={`${theme==="light"? 'light':""}`}>
       <motion.tr
         className={`list-card ${cardStyle} ${theme==="light"? 'light':""} `}
-        initial={{ opacity: 0, x: -50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6}}
+        initial={{ opacity: 0, x: -100 }}  // Start off-screen to the left
+        whileInView={{ opacity: 1, x: 0 }}  // Animate to full opacity and original position when in view
+        transition={{ duration: 0.4, delay: index * 0.2, ease: "easeOut" }}  // Smooth transition
+        
       >
         {/* Logo and name */}
         <Tooltip title="coin logo & name">
