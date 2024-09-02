@@ -23,7 +23,7 @@ const Header = () => {
         <ThemeSwitchBtn onClick={toggleTheme}/>
           <Link className={`navLink ${theme ==='light' ? 'light': ""}`} to='/'>Home</Link>
           <Link className={`navLink ${theme ==='light' ? 'light': ""}`} to='/compare'>Compare</Link>
-          <Link className={`navLink ${theme ==='light' ? 'light': ""}`} to='/watchlist'>Watchlist</Link>
+          {/* <Link className={`navLink ${theme ==='light' ? 'light': ""}`} to='/watchlist'>Watchlist</Link> */}
           <Link className={`navLink ${theme ==='light' ? 'light': ""}`} to='/dashboard'>
             {/* common button Component */}
             <ButtonComponent text={"Dashboard "} 

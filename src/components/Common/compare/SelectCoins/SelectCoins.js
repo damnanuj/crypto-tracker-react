@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { fetch100CoinsData } from "../../../../functions/fetch100CoinsData";
 import { MenuItem, Select } from "@mui/material";
 import "./SelectCoins.scss";
+import { ThemeContext } from "../../../../context/ThemeContext";
 const SelectCoins = ({ crypto1, crypto2, handleCoinChange }) => {
   const [allCoins, setAllCoins] = useState([]);
+  const { theme} = useContext(ThemeContext);
   const styles = {
     height: "2.5rem",
     color: "var(--white)",
@@ -30,7 +32,7 @@ const SelectCoins = ({ crypto1, crypto2, handleCoinChange }) => {
 
   return (
     <div className="selectCoins-flex">
-      <div className="crypto-1">
+      <div className={`crypto-1 ${theme==="light"? 'light':""}`}>
         <p>Crypto 1</p>
         <Select
           sx={styles}
@@ -45,7 +47,7 @@ const SelectCoins = ({ crypto1, crypto2, handleCoinChange }) => {
             ))}
         </Select>
       </div>
-      <div className="crypto-2">
+      <div className={`crypto-2 ${theme==="light"? 'light':""}`}>
         <p>Crypto 2</p>
         <Select
           sx={styles}

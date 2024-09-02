@@ -9,10 +9,23 @@ tr {
   gap: 1rem;
   color: $dark-text-color;
   // border: 1px solid red;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.323);
-  // border-top: 1px solid rgba(128, 128, 128, 0.323);
-  // background-color: red;
+  border: 1px solid rgba(128, 128, 128, 0.323);
+  margin-bottom: 5px;
+  transition: all 0.3s ease-in;
+  cursor: pointer;
+  
+  &.light {
+    background-color: $light-background-color;
+
+    &:hover {
+      background-color: $light-card-background-color;
+    }
+  }
 }
+tr:hover {
+  background-color: $dark-card-background-color;
+}
+
 
 td {
   // border: 1px solid blue;
@@ -63,14 +76,7 @@ td {
   }
 }
 
-tr:hover {
-  transition: all 0.3s ease-in;
-  cursor: pointer;
-  background-color: $dark-card-background-color;
-  &.light{
-    background-color: $light-card-background-color;
-  }
-}
+
 .favorite:hover{
   transform: scale(1.1);
   transition: all 0.3s ease-in-out;

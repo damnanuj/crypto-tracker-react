@@ -82,14 +82,7 @@ body {
 
  
 
-.grayWrapper{
-  background-color: var(--dark-card-background-color);
-  margin: 1rem;
-  border-radius: 20px;
-  tr{
-    border: none;
-  }
-}
+
 
 .select_crypto_days{
   display: flex;

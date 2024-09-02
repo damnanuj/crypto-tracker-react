@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./style.scss";
+import { ThemeContext } from "../../../context/ThemeContext";
 const CoinInfo = ({ heading, desc }) => {
   const [flag, setFlag] = useState(false);
 
@@ -7,9 +8,11 @@ const CoinInfo = ({ heading, desc }) => {
     desc.slice(0, 420) + `<p style="color:gray"}>read more...</p>`;
   const longInfo = desc + `<p style="color:gray"}>read less...</p>`;
 
+  const {theme} = useContext(ThemeContext)
+
   // console.log(flag);
   return (
-    <div className="grayWrapper coinInfo">
+    <div className={`grayWrapper coinInfo ${theme==="light"? 'light':""}`}>
       <h2>{heading}</h2>
       {desc.length > 420 ? (
         <p

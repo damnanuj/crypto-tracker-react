@@ -114,13 +114,14 @@ const ComparePage = () => {
               noPTag={true}
             />
           </div>
-          <div className="grayWrapper">
-            <ListComponent coin={crypto1Data} />
-          </div>
-          <div className="grayWrapper">
-            <ListComponent coin={crypto2Data} />
-          </div>
-          <div className="grayWrapper lineChart">
+            <div style={{padding : "0 1rem"}}>
+            <ListComponent  coin={crypto1Data} />
+         
+          
+            <ListComponent  coin={crypto2Data} />
+            </div>
+         
+          <div className={`grayWrapper lineChart `}>
           <TogglePriceType priceType={priceType} handlePriceTypeChange={handlePriceTypeChange}/>
             <LineChart
               chartData={chartData}

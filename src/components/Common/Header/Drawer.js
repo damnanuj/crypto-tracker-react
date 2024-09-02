@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Drawer from '@mui/material/Drawer';
 
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
@@ -7,10 +7,12 @@ import { IconButton } from '@mui/material';
 import ButtonComponent from '../Button/Button';
 import { Link } from 'react-router-dom';
 import ThemeSwitchBtn from '../ThemeSwitch/ThemeSwitchBtn';
+import { ThemeContext } from '../../../context/ThemeContext';
 
 
 export default function AnchorTemporaryDrawer() {
   const [open, setOpen] = useState(false);
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
     <div>
@@ -25,7 +27,7 @@ export default function AnchorTemporaryDrawer() {
             <div className='drawer'>
                 <Link className='navLink' to='/'>Home</Link>
                 <Link className='navLink' to='/compare'>Compare</Link>
-                <Link className='navLink' to='/watchlist'>Watchlist</Link>
+                {/* <Link className='navLink' to='/watchlist'>Watchlist</Link> */}
                 <Link className='navLink' to='/dashboard'>
                   {/* common button Component */}
                   <ButtonComponent text={"Dashboard "} 
@@ -33,7 +35,7 @@ export default function AnchorTemporaryDrawer() {
                     outline={false}
                   />
                 </Link> 
-                <ThemeSwitchBtn/>
+                <ThemeSwitchBtn onClick={toggleTheme}/>
             </div>
          </Drawer>
       

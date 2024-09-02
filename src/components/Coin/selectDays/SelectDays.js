@@ -1,16 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 import MenuItem from "@mui/material/MenuItem";
 
 import Select from "@mui/material/Select";
 import "./style.scss";
+import { ThemeContext } from "../../../context/ThemeContext";
 
 export default function SelectDays({ days, handleDaysChange, noPTag }) {
- 
+ const {theme} = useContext(ThemeContext)
 
   
   return (
-    <div className="select-days">
+    <div className={`select-days ${theme==="light"? 'light':""}`}>
      {!noPTag &&  <p>Price Change in </p>}
       <Select
         sx={{

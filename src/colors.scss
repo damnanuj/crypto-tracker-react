@@ -31,57 +31,22 @@ $dark-error-color: #dc3545; // Color for error messages
 
 
 
-// src/styles/_themes.scss
-@mixin theme-variables($primary-color, $secondary-color, $background-color, $card-background-color, $text-color, $light-text-color, $accent-text-color, $button-background-color, $button-text-color, $border-color, $success-color, $warning-color, $error-color) {
-    --primary-color: #{$primary-color};
-    --secondary-color: #{$secondary-color};
-    --background-color: #{$background-color};
-    --card-background-color: #{$card-background-color};
-    --text-color: #{$text-color};
-    --light-text-color: #{$light-text-color};
-    --accent-text-color: #{$accent-text-color};
-    --button-background-color: #{$button-background-color};
-    --button-text-color: #{$button-text-color};
-    --border-color: #{$border-color};
-    --success-color: #{$success-color};
-    --warning-color: #{$warning-color};
-    --error-color: #{$error-color};
+.grayWrapper{
+  background-color: $dark-card-background-color;
+  margin: 1rem;
+ 
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  tr{
+    border: none;
   }
-  
-  // Define light and dark themes
-  .light-theme {
-    @include theme-variables(
-      $light-primary-color,
-      $light-secondary-color,
-      $light-background-color,
-      $light-card-background-color,
-      $light-text-color,
-      $light-light-text-color,
-      $light-accent-text-color,
-      $light-button-background-color,
-      $light-button-text-color,
-      $light-border-color,
-      $light-success-color,
-      $light-warning-color,
-      $light-error-color
-    );
-  }
-  
-  .dark-theme {
-    @include theme-variables(
-      $dark-primary-color,
-      $dark-secondary-color,
-      $dark-background-color,
-      $dark-card-background-color,
-      $dark-text-color,
-      $dark-light-text-color,
-      $dark-accent-text-color,
-      $dark-button-background-color,
-      $dark-button-text-color,
-      $dark-border-color,
-      $dark-success-color,
-      $dark-warning-color,
-      $dark-error-color
-    );
-  }
-  
+  &.light{
+    background-color: $light-background-color;
+    border:1px solid $light-border-color;
+    color: $light-text-color;
+    &:hover{
+      background-color: $light-border-color;
+    }
+}
+}

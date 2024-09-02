@@ -24,9 +24,9 @@ const ListComponent = ({ coin }) => {
   const favorite = `${coin.price_change_percentage_24h >= 0 ? "green" : "red"}`;
 
   return (
-    <Link to={`/coin/${coin.id}`}>
+    <Link to={`/coin/${coin.id}`} className={`${theme==="light"? 'light':""}`}>
       <motion.tr
-        className={`list-card ${cardStyle} ${theme==="light"? 'light':""}`}
+        className={`list-card ${cardStyle} ${theme==="light"? 'light':""} `}
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6}}
